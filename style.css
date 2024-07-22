@@ -1,0 +1,15 @@
+*{
+    background-color: darkgray;
+    margin: 0;
+    padding: 0;
+}
+
+.portail{
+    background-color: darkgoldenrod;
+    height: 160px;
+}
+
+.dropCSV{
+    height: 150px;
+    background-color: cadetblue;
+}
