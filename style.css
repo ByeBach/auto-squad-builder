@@ -1,15 +1,42 @@
 *{
-    background-color: darkgray;
     margin: 0;
     padding: 0;
 }
 
 .portail{
-    background-color: darkgoldenrod;
-    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 150px;
+    color: white;
+    background-color: black;
+    
+}
+h1, h2{
+    display: inline-block;
+    background-color: black;
 }
 
 .dropCSV{
-    height: 150px;
-    background-color: cadetblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+.medButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+button{
+    padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
 }
