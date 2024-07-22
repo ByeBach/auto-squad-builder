@@ -1,23 +1,3 @@
-const jugadores = {
-    Id: 12,
-    Lastname: 'Torres',
-    Name: 'Fernando',
-    Position: 87,
-    Rarity: 'Icon',
-    SkillMoves: 4,
-    WeakFoot: 4,
-    Chemistry: 'Basic',
-    Country: 'Spain',
-    League: 'Icons',
-    Club: 'ICON',
-    Untradeable: true,
-    Loans: 0,
-    BoughtFor: 0,
-    PriceRange: '65500-230000',
-    DiscardValue: 0,
-    Location: 'CLUB'
-}
-
 var bronzePlayers = [];
 var platePlayers = [];
 var goldPlayers = [];
@@ -174,22 +154,23 @@ function createMed89(){
 //data es un array de players
 
 function generatePLayerCard(data){
+    //alert('llega la funcion')
     //se debe mejorar
-    console.log(data);
+    //console.log(data);
     let html = '';
     const container = document.getElementById('content');
     data.forEach(element => {
-        console.log(element);
+        //console.log(element);
         html += `<div class='card' >`
-            html +=`<p>${element.Lastname}`
-            html +=`<p>${element.Rating}`
+            html +=`<p> ${element.Name} ${element.Lastname} </p>`
+            html +=`<p>${element.Country}</p>`
+            html +=`<p>${element.Rating} ${element.Rarity}</p>`
+            html +=`<p>${element.League} ${element.Club} </p>`
         html += `</div>`
         html += `<br>`
     });
     document.getElementById('content').innerHTML = html;
 }
-
-
 
 createMed83();
 createMed84();
@@ -199,18 +180,50 @@ createMed87();
 createMed88();
 createMed89();
 
-console.log(createdMed83);
-console.log(createdMed84);
-console.log(createdMed85);
-console.log(createdMed86);
-console.log(createdMed87);
-console.log(createdMed88);
-console.log(createdMed89);
+const btn83 = document.getElementById("button83")
+btn83.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePLayerCard(createdMed83);
+})
 
-console.log('TEST------------')
+const btn84 = document.getElementById("button84")
+btn84.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePLayerCard(createdMed84);
+})
+const btn85 = document.getElementById("button85")
+btn85.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePLayerCard(createdMed85);
+})
 
+const btn86 = document.getElementById("button86")
+btn86.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePLayerCard(createdMed86);
+})
+
+
+const btn87 = document.getElementById("button87")
+btn87.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePLayerCard(createdMed87);
+})
+
+const btn88 = document.getElementById("button88")
+btn88.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePLayerCard(createdMed88);
+})
+
+
+const btn89 = document.getElementById("button89")
+btn89.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePLayerCard(createdMed89);
+})
 //const testSquad = createMed83();
-generatePLayerCard(createdMed83);
+
 
 
 
