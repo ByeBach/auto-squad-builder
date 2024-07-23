@@ -162,12 +162,12 @@ function generatePLayerCard(data){
     data.forEach(element => {
         //console.log(element);
         html += `<div class='card' >`
-            html +=`<p> ${element.Name} ${element.Lastname} </p>`
+            html +=`<p id='playerRating'>${element.Rating}</p>`
+            html +=`<p id='playerLastName'>${element.Lastname} </p>`
             html +=`<p>${element.Country}</p>`
-            html +=`<p>${element.Rating} ${element.Rarity}</p>`
+            html +=`<p>${element.Rarity}</p>`
             html +=`<p>${element.League} ${element.Club} </p>`
         html += `</div>`
-        html += `<br>`
     });
     document.getElementById('content').innerHTML = html;
 }
@@ -222,7 +222,36 @@ btn89.addEventListener("click", (e) => {
     e.preventDefault();
     generatePLayerCard(createdMed89);
 })
+
+function deletePlayer(nameplayer, media){
+    let gold = JSON.parse(localStorage.getItem('goldPlayers'));      
+        
+    
+    const test = gold.find(({Lastname}) => Lastname=== nameplayer.trim())
+    if(test){
+        console.log("player encontrado", test)
+    }else{
+        console.log("no se encontro")
+    }
+}
+
+
+const deliver = document.getElementById("deliver")
+deliver.addEventListener("click", (e) =>{
+    e.preventDefault();
+    var div = document.getElementById("content");
+    var elem = div.childNodes;
+    elem.forEach( (child) => {
+        let name = child.childNodes[1].textContent
+        let media = child.childNodes[0].textContent 
+        deletePlayer(name, media)
+    })
+})
+
+
+
 //const testSquad = createMed83();
+
 
 
 
